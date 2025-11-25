@@ -1,47 +1,86 @@
-import { Building2, Shield, Users } from "lucide-react";
+import { Building2, Shield, Users, Target, Award, TrendingUp } from "lucide-react";
 
 export const About = () => {
   return (
-    <section className="py-20 bg-background" id="about">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
-          O nama
-        </h2>
-        <div className="space-y-6 text-lg text-muted-foreground">
-          <p className="text-center text-xl">
-            Smo <span className="font-semibold text-foreground">zagrebačka tvrtka s dugogodišnjim iskustvom</span> u automobilskoj industriji.
+    <section className="py-24 bg-gradient-to-b from-secondary to-background" id="about">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            O nama
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Vaš pouzdan partner za otkup vozila
           </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
-            <div className="text-center">
-              <Building2 className="h-12 w-12 mx-auto mb-4 text-primary" />
-              <h3 className="font-semibold text-foreground mb-2">Zagreb</h3>
-              <p className="text-sm">Sjedište u Zagrebu</p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Left side - Icons grid */}
+          <div className="grid grid-cols-2 gap-6 animate-slide-in-left">
+            <div className="bg-background p-8 rounded-2xl shadow-lg hover-lift text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center">
+                <Building2 className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2 text-lg">Zagreb</h3>
+              <p className="text-sm text-muted-foreground">Sjedište u Zagrebu</p>
             </div>
-            <div className="text-center">
-              <Shield className="h-12 w-12 mx-auto mb-4 text-primary" />
-              <h3 className="font-semibold text-foreground mb-2">Pouzdanost</h3>
-              <p className="text-sm">Dugogodišnje iskustvo</p>
+            
+            <div className="bg-background p-8 rounded-2xl shadow-lg hover-lift text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center">
+                <Shield className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2 text-lg">15+ godina</h3>
+              <p className="text-sm text-muted-foreground">Iskustva u branši</p>
             </div>
-            <div className="text-center">
-              <Users className="h-12 w-12 mx-auto mb-4 text-primary" />
-              <h3 className="font-semibold text-foreground mb-2">Zadovoljni klijenti</h3>
-              <p className="text-sm">Stotine uspješnih transakcija</p>
+            
+            <div className="bg-background p-8 rounded-2xl shadow-lg hover-lift text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
+                <Users className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2 text-lg">500+</h3>
+              <p className="text-sm text-muted-foreground">Zadovoljnih klijenata</p>
+            </div>
+            
+            <div className="bg-background p-8 rounded-2xl shadow-lg hover-lift text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
+                <TrendingUp className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2 text-lg">24/7</h3>
+              <p className="text-sm text-muted-foreground">Dostupnost</p>
             </div>
           </div>
 
-          <p>
-            Poslujemo <span className="font-semibold text-foreground">diljem cijele Hrvatske</span> i nudimo 
-            brz, pošten i transparentan otkup vozila.
-          </p>
-
-          <div className="bg-primary/5 p-6 rounded-lg border-l-4 border-primary">
-            <h3 className="text-xl font-semibold mb-3 text-foreground">Naša misija</h3>
-            <p>
-              Predani smo pružanju vlasnicima vozila <span className="font-semibold">najbržeg, najjednostavnijeg 
-              i najsigurnijeg načina prodaje automobila</span>. Svakom klijentu pristupamo individualno, 
-              nudimo poštene cijene i preuzimamo svu dokumentaciju kako se vi ne biste morali ni o čemu brinuti.
+          {/* Right side - Text content */}
+          <div className="space-y-6 animate-slide-in-right">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              <span className="font-bold text-foreground">Zagrebačka tvrtka</span> s dugogodišnjim iskustvom 
+              u automobilskoj industriji. Poslujemo diljem cijele Hrvatske i nudimo 
+              brz, pošten i transparentan otkup vozila.
             </p>
+            
+            <div className="bg-gradient-to-br from-primary/10 to-accent/10 p-8 rounded-2xl border-l-4 border-primary">
+              <div className="flex items-center gap-3 mb-4">
+                <Target className="h-7 w-7 text-primary" />
+                <h3 className="text-2xl font-bold text-foreground">Naša misija</h3>
+              </div>
+              <p className="text-muted-foreground leading-relaxed">
+                Predani smo pružanju vlasnicima vozila <span className="font-semibold text-foreground">najbržeg, 
+                najjednostavnijeg i najsigurnijeg načina prodaje automobila</span>. Svakom klijentu 
+                pristupamo individualno, nudimo poštene cijene i preuzimamo svu dokumentaciju 
+                kako se vi ne biste morali ni o čemu brinuti.
+              </p>
+            </div>
+
+            <div className="flex items-start gap-4 p-6 bg-background rounded-2xl shadow-lg">
+              <div className="p-3 bg-gradient-to-br from-accent/20 to-orange-500/20 rounded-xl">
+                <Award className="h-6 w-6 text-accent" />
+              </div>
+              <div>
+                <h4 className="font-bold text-foreground mb-2">Naše vrijednosti</h4>
+                <p className="text-muted-foreground text-sm">
+                  Transparentnost, brzina, pouzdanost i zadovoljstvo klijenata su temelji našeg poslovanja.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
