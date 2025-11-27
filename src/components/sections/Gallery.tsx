@@ -6,12 +6,12 @@ import car5 from "@/assets/gallery/car-5.jpg";
 import car6 from "@/assets/gallery/car-6.jpg";
 
 const galleryImages = [
-  { src: car1, alt: "Novi luksuzni automobil u salonu" },
-  { src: car2, alt: "Polovan sedan ispred kuće" },
-  { src: car3, alt: "VW Caddy kombi na parkingu" },
-  { src: car4, alt: "Stariji model ispred garaže" },
-  { src: car5, alt: "SUV u prirodnom okruženju" },
-  { src: car6, alt: "Gradski hatchback na ulici" },
+  { src: car1, alt: "Novi luksuzni automobil" },
+  { src: car2, alt: "Polovan sedan" },
+  { src: car3, alt: "VW Caddy kombi" },
+  { src: car4, alt: "Stariji model automobila" },
+  { src: car5, alt: "SUV vozilo" },
+  { src: car6, alt: "Kompaktni gradski automobil" },
 ];
 
 export const Gallery = () => {
