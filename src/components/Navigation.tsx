@@ -47,7 +47,7 @@ export const Navigation = () => {
           <div className="flex items-center justify-between h-16 sm:h-20">
             <button
               onClick={() => scrollToSection("#hero")}
-              className="text-xl sm:text-2xl font-bold text-foreground hover:text-primary transition-colors"
+              className="text-xl sm:text-2xl font-bold text-white hover:text-primary transition-colors"
             >
               Otkup Vozila
             </button>
@@ -58,7 +58,7 @@ export const Navigation = () => {
                 <button
                   key={link.href}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-sm xl:text-base text-foreground hover:text-primary transition-colors font-medium"
+                  className="text-sm xl:text-base text-white hover:text-primary transition-colors font-medium"
                 >
                   {link.label}
                 </button>
@@ -68,7 +68,7 @@ export const Navigation = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
+              className="lg:hidden p-2 text-white hover:text-primary transition-colors"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

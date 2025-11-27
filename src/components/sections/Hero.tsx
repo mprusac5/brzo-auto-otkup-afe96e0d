@@ -17,7 +17,7 @@ export const Hero = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/98 via-background/90 to-background/70" />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-white/30 to-transparent" />
       </div>
 
       {/* Content */}
@@ -27,8 +27,8 @@ export const Hero = () => {
             <span className="text-accent font-semibold text-sm">⚡ Gotovina na ruke odmah</span>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-            Prodajte auto
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <span className="text-white">Prodajte auto</span>
             <br />
             <span className="text-primary">brzo i sigurno</span>
           </h1>
