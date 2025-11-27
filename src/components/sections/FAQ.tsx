@@ -75,7 +75,7 @@ export const FAQ = () => {
             Imate dodatno pitanje?
           </p>
           <p className="text-muted-foreground mb-6">
-            Kontaktirajte nas putem telefona, WhatsApp-a ili emaila — rado ćemo odgovoriti!
+            Kontaktirajte nas putem telefona, WhatsApp-a ili emaila — rado ćemo odgovoriti na sva vaša pitanja!
           </p>
           <a
             href="tel:+385912345678"
