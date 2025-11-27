@@ -8,7 +8,7 @@ export const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -21,28 +21,28 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 sm:px-6 py-16 sm:py-20 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
         <div className="max-w-3xl animate-fade-in">
-          <div className="inline-block mb-6 px-4 py-2 bg-accent/10 border border-accent/30 rounded-full">
-            <span className="text-accent font-semibold text-sm">⚡ Gotovina na ruke odmah</span>
+          <div className="inline-block mb-4 sm:mb-6 px-3 sm:px-4 py-1.5 sm:py-2 bg-accent/10 border border-accent/30 rounded-full">
+            <span className="text-accent font-semibold text-xs sm:text-sm">⚡ Gotovina na ruke odmah</span>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
             <span className="text-black">Prodajte auto</span>
             <br />
             <span className="text-primary">brzo i sigurno</span>
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl leading-relaxed">
             Trenutna isplata, najbolje cijene, bez papirologije. 
             Dolazimo na vašu lokaciju bilo gdje u Hrvatskoj.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 items-start">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-start">
             <Button 
               size="lg" 
               onClick={scrollToContact}
-              className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-7 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground text-base sm:text-lg px-6 sm:px-8 py-6 sm:py-7 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group w-full sm:w-auto"
             >
               Zatražite ponudu
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -50,7 +50,7 @@ export const Hero = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="text-lg px-8 py-7 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="text-base sm:text-lg px-6 sm:px-8 py-6 sm:py-7 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto"
               asChild
             >
               <a href="tel:+385912345678">
@@ -61,7 +61,7 @@ export const Hero = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-12 flex flex-wrap gap-8 text-sm">
+          <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:gap-8 text-xs sm:text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               <span className="text-black font-semibold drop-shadow-lg">Preko 500+ zadovoljnih klijenata</span>

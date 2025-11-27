@@ -48,7 +48,7 @@ export const Contact = () => {
     <section 
       ref={elementRef}
       id="contact" 
-      className={`py-16 sm:py-20 md:py-24 bg-gradient-to-b from-secondary to-background relative overflow-hidden transition-all duration-1000 ${
+      className={`py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-secondary to-background relative overflow-hidden transition-all duration-1000 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
@@ -59,8 +59,8 @@ export const Contact = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl relative z-10">
-        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">
             Kontaktirajte nas
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -130,7 +130,7 @@ export const Contact = () => {
                 />
               </div>
               
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Input
                   name="year"
                   placeholder="Godina *"
@@ -145,7 +145,7 @@ export const Contact = () => {
                 />
               </div>
               
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Input
                   name="fuel_type"
                   placeholder="Vrsta goriva"
@@ -200,7 +200,7 @@ export const Contact = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-accent to-orange-500 hover:from-accent/90 hover:to-orange-500/90 text-white text-lg py-7 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
+                className="w-full bg-gradient-to-r from-accent to-orange-500 hover:from-accent/90 hover:to-orange-500/90 text-white text-base sm:text-lg py-6 sm:py-7 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
               >
                 {isSubmitting ? "Šalje se..." : "Pošaljite upit"}
                 <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

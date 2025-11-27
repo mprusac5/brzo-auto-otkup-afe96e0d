@@ -16,13 +16,13 @@ export const Services = () => {
     <section 
       ref={elementRef}
       id="services" 
-      className={`py-16 sm:py-20 md:py-24 bg-background relative transition-all duration-1000 ${
+      className={`py-12 sm:py-16 md:py-20 lg:py-24 bg-background relative transition-all duration-1000 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">
             Otkup automobila u Hrvatskoj
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
