@@ -140,12 +140,12 @@ export const Contact = () => {
               <div className="grid grid-cols-2 gap-4">
                 <Input
                   name="fuel_type"
-                  placeholder="Vrsta goriva (benzin/dizel/hibrid)"
+                  placeholder="Vrsta goriva"
                   className="h-12 text-base"
                 />
                 <Input
                   name="transmission"
-                  placeholder="Mjenjač (automatik/manual)"
+                  placeholder="Vrsta mjenjača"
                   className="h-12 text-base"
                 />
               </div>
@@ -165,6 +165,22 @@ export const Contact = () => {
                   rows={4}
                   className="w-full text-base"
                 />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Slike automobila (opcionalno)
+                </label>
+                <Input
+                  name="photos"
+                  type="file"
+                  multiple
+                  accept="image/*"
+                  className="h-12 text-base"
+                />
+                <p className="text-xs text-muted-foreground mt-2">
+                  Možete dodati više fotografija vozila
+                </p>
               </div>
               
               <Button
