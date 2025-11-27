@@ -1,4 +1,4 @@
-import { Banknote, Car, FileText, MapPin, CheckCircle } from "lucide-react";
+import { Banknote, Car, FileText, MapPin, CheckCircle, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const benefits = [
@@ -31,6 +31,12 @@ const benefits = [
     title: "Poštena i transparentna procjena",
     description: "Fer cijene bez skrivenih naknada ili iznuđivanja",
     color: "text-orange-500"
+  },
+  {
+    icon: Clock,
+    title: "Brza i jednostavna procedura",
+    description: "Cijeli proces traje 30-60 minuta od dolaska do isplate",
+    color: "text-cyan-500"
   }
 ];
 

@@ -16,7 +16,7 @@ export const Hero = () => {
           alt="Otkup automobila" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/98 via-background/90 to-background/70" />
       </div>
 
       {/* Content */}
@@ -74,6 +74,14 @@ export const Hero = () => {
               <span className="text-muted-foreground">Dostupni 24/7</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+        <div className="flex flex-col items-center gap-2 cursor-pointer" onClick={scrollToContact}>
+          <span className="text-muted-foreground text-sm">Saznajte više</span>
+          <ArrowRight className="h-6 w-6 text-primary rotate-90" />
         </div>
       </div>
 

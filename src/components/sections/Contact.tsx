@@ -137,6 +137,27 @@ export const Contact = () => {
                 />
               </div>
               
+              <div className="grid grid-cols-2 gap-4">
+                <Input
+                  name="fuel_type"
+                  placeholder="Vrsta goriva (benzin/dizel/hibrid)"
+                  className="h-12 text-base"
+                />
+                <Input
+                  name="transmission"
+                  placeholder="Mjenjač (automatik/manual)"
+                  className="h-12 text-base"
+                />
+              </div>
+              
+              <div>
+                <Input
+                  name="engine_size"
+                  placeholder="Zapremina motora (npr. 1.6, 2.0)"
+                  className="h-12 text-base"
+                />
+              </div>
+              
               <div>
                 <Textarea
                   name="message"
@@ -183,10 +204,10 @@ export const Contact = () => {
                 <div>
                   <h4 className="font-bold text-foreground mb-2 text-lg">Email</h4>
                   <a 
-                    href="mailto:marinprusac5@gmail.com" 
+                    href="mailto:otkupvozila@gmail.com" 
                     className="text-primary hover:underline break-all"
                   >
-                    marinprusac5@gmail.com
+                    otkupvozila@gmail.com
                   </a>
                   <p className="text-sm text-muted-foreground mt-1">Odgovor u roku 24h</p>
                 </div>

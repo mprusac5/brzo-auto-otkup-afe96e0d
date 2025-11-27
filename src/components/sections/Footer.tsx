@@ -48,13 +48,13 @@ export const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="mailto:marinprusac5@gmail.com" 
+                  href="mailto:otkupvozila@gmail.com" 
                   className="flex items-center gap-3 text-background/80 hover:text-background transition-colors group"
                 >
                   <div className="p-2 bg-primary/20 rounded-lg group-hover:bg-primary/30 transition-colors">
                     <Mail className="h-5 w-5" />
                   </div>
-                  <span className="text-sm break-all">marinprusac5@gmail.com</span>
+                  <span className="text-sm break-all">otkupvozila@gmail.com</span>
                 </a>
               </li>
               <li>
