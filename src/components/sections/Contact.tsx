@@ -140,12 +140,12 @@ export const Contact = () => {
               <div className="grid grid-cols-2 gap-4">
                 <Input
                   name="fuel_type"
-                  placeholder="Vrsta goriva (benzin/dizel/hibrid)"
+                  placeholder="Vrsta goriva"
                   className="h-12 text-base"
                 />
                 <Input
                   name="transmission"
-                  placeholder="Mjenjač (automatik/manual)"
+                  placeholder="Vrsta mjenjača"
                   className="h-12 text-base"
                 />
               </div>
@@ -165,6 +165,28 @@ export const Contact = () => {
                   rows={4}
                   className="w-full text-base"
                 />
+              </div>
+              
+              <div>
+                <label className="block mb-2 text-sm font-medium text-foreground">
+                  Slike vozila (opcionalno)
+                </label>
+                <div className="border-2 border-dashed border-border rounded-lg p-6 hover:border-primary/50 transition-colors cursor-pointer bg-secondary/30">
+                  <Input
+                    type="file"
+                    name="vehicle_images"
+                    accept="image/*"
+                    multiple
+                    className="hidden"
+                    id="vehicle_images"
+                  />
+                  <label htmlFor="vehicle_images" className="cursor-pointer flex flex-col items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    <span className="text-muted-foreground text-sm">Kliknite za učitavanje slika automobila</span>
+                  </label>
+                </div>
               </div>
               
               <Button
