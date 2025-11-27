@@ -64,15 +64,15 @@ export const Hero = () => {
           <div className="mt-12 flex flex-wrap gap-8 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-muted-foreground">Preko 500+ zadovoljnih klijenata</span>
+              <span className="text-black font-semibold drop-shadow-lg">Preko 500+ zadovoljnih klijenata</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-muted-foreground">15+ godina iskustva</span>
+              <span className="text-black font-semibold drop-shadow-lg">15+ godina iskustva</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-muted-foreground">Dostupni 24/7</span>
+              <span className="text-black font-semibold drop-shadow-lg">Dostupni 24/7</span>
             </div>
           </div>
         </div>
