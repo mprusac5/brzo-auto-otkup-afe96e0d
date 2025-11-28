@@ -61,7 +61,7 @@ export const Gallery = () => {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground text-lg">
-            Otkupljujemo sve vrste vozila — kontaktirajte nas za procjenu vašeg automobila
+            Otkupljujemo sve vrste vozila — kontaktirajte nas za procjenu Vašeg automobila
           </p>
         </div>
       </div>

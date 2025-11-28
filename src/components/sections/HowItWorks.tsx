@@ -11,7 +11,7 @@ const steps = [
   {
     icon: Search,
     title: "Brza procjena i dolazak",
-    description: "Dajemo inicijalnu ponudu, dolazimo na vašu lokaciju i pregledavamo vozilo.",
+    description: "Dajemo inicijalnu ponudu, dolazimo na Vašu lokaciju i pregledavamo vozilo.",
     gradient: "from-purple-500 to-pink-500"
   },
   {

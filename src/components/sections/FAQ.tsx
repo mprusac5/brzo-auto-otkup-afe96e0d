@@ -9,7 +9,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const faqs = [
   {
     question: "Koliko brzo mogu dobiti novac za svoje vozilo?",
-    answer: "Nakon dogovora dolazimo na vašu lokaciju, obavljamo pregled vozila i procjenu. Ako se dogovorimo, isplata se obavlja istog dana, gotovinom ili bankovnim prijenosom prema vašoj želji.",
+    answer: "Nakon dogovora dolazimo na Vašu lokaciju, obavljamo pregled vozila i procjenu. Ako se dogovorimo, isplata se obavlja istog dana, gotovinom ili bankovnim prijenosom prema Vašoj želji.",
   },
   {
     question: "Koje vrste vozila otkupljujete?",
@@ -21,11 +21,11 @@ const faqs = [
   },
   {
     question: "Dolazite li na moju lokaciju?",
-    answer: "Da! Dolazimo na vašu adresu bilo gdje u Hrvatskoj — Zagreb, Varaždin, Split, Rijeka, Osijek i sve ostale gradove. Dolazak i procjena su potpuno besplatni bez obaveze kupnje.",
+    answer: "Da! Dolazimo na Vašu adresu bilo gdje u Hrvatskoj — Zagreb, Varaždin, Split, Rijeka, Osijek i sve ostale gradove. Dolazak i procjena su potpuno besplatni bez obaveze kupnje.",
   },
   {
     question: "Što ako vozilo nije u voznom stanju?",
-    answer: "Nije problem! Otkupljujemo i neispravna, havarisana ili oštećena vozila koja se ne mogu voziti. U tom slučaju možemo organizirati prijevoz vozila bez dodatnih troškova za vas.",
+    answer: "Nije problem! Otkupljujemo i neispravna, havarisana ili oštećena vozila koja se ne mogu voziti. U tom slučaju možemo organizirati prijevoz vozila bez dodatnih troškova za Vas.",
   },
   {
     question: "Kako se utvrđuje cijena vozila?",
@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     question: "Mogu li prodati vozilo ako još imam kredit na njemu?",
-    answer: "Da, moguće je. U tom slučaju možemo pomoći s isplatom kredita i rješavanjem administrativnih stvari s bankom. Kontaktirajte nas kako bismo razgovarali o vašoj specifičnoj situaciji.",
+    answer: "Da, moguće je. U tom slučaju možemo pomoći s isplatom kredita i rješavanjem administrativnih stvari s bankom. Kontaktirajte nas kako bismo razgovarali o Vašoj specifičnoj situaciji.",
   },
 ];
 

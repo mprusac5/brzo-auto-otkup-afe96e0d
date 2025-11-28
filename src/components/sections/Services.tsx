@@ -35,7 +35,7 @@ export const Services = () => {
           <div className="space-y-6 animate-slide-in-left">
             <p className="text-lg text-muted-foreground leading-relaxed">
               Nudimo profesionalan otkup svih vrsta putničkih vozila diljem Hrvatske. 
-              Bez obzira na marku, godinu proizvodnje, kilometražu ili stanje vašeg automobila — mi smo tu za vas.
+              Bez obzira na marku, godinu proizvodnje, kilometražu ili stanje automobila — mi smo tu za Vas.
             </p>
             
             <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-2xl border-2 border-primary/20">

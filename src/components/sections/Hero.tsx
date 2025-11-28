@@ -35,7 +35,7 @@ export const Hero = () => {
           
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl leading-relaxed">
             Trenutna isplata, najbolje cijene, bez papirologije. 
-            Dolazimo na vašu lokaciju bilo gdje u Hrvatskoj.
+            Dolazimo na Vašu lokaciju bilo gdje u Hrvatskoj.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-start">

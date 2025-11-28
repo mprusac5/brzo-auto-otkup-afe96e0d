@@ -75,7 +75,7 @@ export const About = () => {
                 Predani smo pružanju vlasnicima vozila <span className="font-semibold text-foreground">najbržeg, 
                 najjednostavnijeg i najsigurnijeg načina prodaje automobila</span>. Svakom klijentu 
                 pristupamo individualno, nudimo poštene cijene i preuzimamo svu dokumentaciju 
-                kako se vi ne biste morali ni o čemu brinuti.
+                kako se Vi ne biste morali ni o čemu brinuti.
               </p>
             </div>
 

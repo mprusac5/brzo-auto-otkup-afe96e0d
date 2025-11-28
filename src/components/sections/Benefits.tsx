@@ -23,7 +23,7 @@ const benefits = [
   },
   {
     icon: MapPin,
-    title: "Dolazimo na vašu adresu",
+    title: "Dolazimo na Vašu adresu",
     description: "Bilo gdje u Hrvatskoj, besplatan dolazak",
     color: "text-red-500"
   },

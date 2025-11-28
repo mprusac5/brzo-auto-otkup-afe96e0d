@@ -47,7 +47,7 @@ export const Navigation = () => {
           <div className="flex items-center justify-between h-16 sm:h-20">
             <button
               onClick={() => scrollToSection("#hero")}
-              className="text-xl sm:text-2xl font-bold text-black hover:text-primary transition-colors"
+              className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hover:opacity-80 transition-opacity"
             >
               Otkup Vozila
             </button>
@@ -58,7 +58,7 @@ export const Navigation = () => {
                 <button
                   key={link.href}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-sm xl:text-base text-black hover:text-primary transition-colors font-bold"
+                  className="nav-link text-sm xl:text-base text-black hover:text-primary transition-colors font-bold pb-1"
                 >
                   {link.label}
                 </button>
