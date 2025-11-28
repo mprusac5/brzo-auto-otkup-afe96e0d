@@ -152,8 +152,8 @@ export const Testimonials = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden sm:flex -left-12 lg:-left-16" />
-            <CarouselNext className="hidden sm:flex -right-12 lg:-right-16" />
+            <CarouselPrevious className="hidden sm:flex -left-12 lg:-left-16 bg-accent hover:bg-gradient-to-r hover:from-accent hover:to-orange-500 border-accent hover:border-transparent transition-all" />
+            <CarouselNext className="hidden sm:flex -right-12 lg:-right-16 bg-accent hover:bg-gradient-to-r hover:from-accent hover:to-orange-500 border-accent hover:border-transparent transition-all" />
           </Carousel>
         </div>
 

@@ -158,10 +158,15 @@ export const Contact = () => {
                 />
               </div>
               
-              <div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Input
                   name="engine_size"
-                  placeholder="Zapremina motora (npr. 1.6, 2.0)"
+                  placeholder="Kubikaža (npr. 1.6, 2.0)"
+                  className="h-12 text-base"
+                />
+                <Input
+                  name="engine_power"
+                  placeholder="Snaga motora (kW)"
                   className="h-12 text-base"
                 />
               </div>
