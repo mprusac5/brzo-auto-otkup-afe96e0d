@@ -156,48 +156,219 @@ export const Contact = () => {
               <input type="hidden" name="subject" value="🚗 Novi Upit - Otkup Automobila" />
               <input type="hidden" name="from_name" value="Otkup Automobila Website" />
               <input type="hidden" name="redirect" value="false" />
+              <input type="hidden" name="template" value="custom" />
+              <input type="hidden" name="autoresponse" value="true" />
               
-              {/* Formatted message for owner's email */}
-              <input 
-                type="hidden" 
-                name="message" 
-                value="⚠️ HITNO - Novi upit za otkup vozila!"
+              {/* Custom email template for owner (marinprusac5@gmail.com) */}
+              <textarea 
+                name="email_template" 
+                style={{ display: 'none' }}
+                defaultValue={`<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 20px; background-color: #f5f5f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    
+    <!-- Header -->
+    <div style="background: linear-gradient(135deg, #ea384c 0%, #f97316 100%); padding: 40px 20px; text-align: center;">
+      <h1 style="color: #ffffff; margin: 0; font-size: 32px; font-weight: 700;">🚗 Otkup Automobila</h1>
+      <p style="color: #ffffff; margin: 10px 0 0 0; font-size: 16px; opacity: 0.95;">Brza i pouzdana procjena vozila</p>
+    </div>
+
+    <!-- Content -->
+    <div style="padding: 40px 30px;">
+      
+      <h2 style="color: #1a1a1a; margin: 0 0 20px 0; font-size: 24px; font-weight: 600;">📩 Novi Upit za Otkup Vozila</h2>
+      
+      <p style="color: #4a5568; line-height: 1.6; margin: 0 0 25px 0; font-size: 15px;">
+        Primili ste novi upit za otkup vozila. Molimo pregledajte detalje i kontaktirajte klijenta u najkraćem roku.
+      </p>
+
+      <!-- Client Info -->
+      <div style="background-color: #f8fafc; border-left: 4px solid #ea384c; padding: 20px; margin: 25px 0; border-radius: 6px;">
+        <h3 style="color: #ea384c; margin: 0 0 15px 0; font-size: 18px; font-weight: 600;">👤 Informacije o klijentu</h3>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr>
+            <td style="padding: 8px 0; color: #64748b; font-weight: 500; width: 40%;">Ime i prezime:</td>
+            <td style="padding: 8px 0; color: #1a1a1a; font-weight: 600;">{{name}}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #64748b; font-weight: 500;">Email:</td>
+            <td style="padding: 8px 0; color: #1a1a1a; font-weight: 600;">{{email}}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #64748b; font-weight: 500;">Telefon:</td>
+            <td style="padding: 8px 0; color: #1a1a1a; font-weight: 600;">{{phone}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Vehicle Info -->
+      <div style="background-color: #f0fdf4; border-left: 4px solid #10b981; padding: 20px; margin: 25px 0; border-radius: 6px;">
+        <h3 style="color: #10b981; margin: 0 0 15px 0; font-size: 18px; font-weight: 600;">🚙 Detalji vozila</h3>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr>
+            <td style="padding: 8px 0; color: #64748b; font-weight: 500; width: 40%;">Marka i model:</td>
+            <td style="padding: 8px 0; color: #1a1a1a; font-weight: 600;">{{car_make_model}}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #64748b; font-weight: 500;">Godina:</td>
+            <td style="padding: 8px 0; color: #1a1a1a; font-weight: 600;">{{year}}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #64748b; font-weight: 500;">Kilometraža:</td>
+            <td style="padding: 8px 0; color: #1a1a1a; font-weight: 600;">{{mileage}} km</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #64748b; font-weight: 500;">Vrsta goriva:</td>
+            <td style="padding: 8px 0; color: #1a1a1a; font-weight: 600;">{{fuel_type}}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #64748b; font-weight: 500;">Mjenjač:</td>
+            <td style="padding: 8px 0; color: #1a1a1a; font-weight: 600;">{{transmission}}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #64748b; font-weight: 500;">Kubikaža:</td>
+            <td style="padding: 8px 0; color: #1a1a1a; font-weight: 600;">{{engine_size}}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #64748b; font-weight: 500;">Snaga motora:</td>
+            <td style="padding: 8px 0; color: #1a1a1a; font-weight: 600;">{{engine_power}} kW</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Additional Info (if provided) -->
+      <div style="background-color: #fefce8; border-left: 4px solid #eab308; padding: 20px; margin: 25px 0; border-radius: 6px;">
+        <h3 style="color: #ca8a04; margin: 0 0 10px 0; font-size: 18px; font-weight: 600;">📝 Dodatne informacije</h3>
+        <p style="color: #1a1a1a; margin: 0; line-height: 1.6;">{{additional_info}}</p>
+      </div>
+
+      <!-- Action CTA -->
+      <div style="background: linear-gradient(135deg, #ea384c 0%, #f97316 100%); padding: 25px; border-radius: 8px; text-align: center; margin: 30px 0;">
+        <p style="color: #ffffff; margin: 0; font-size: 16px; font-weight: 600;">⚡ Kontaktirajte klijenta što prije kako biste osigurali prodaju!</p>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: #f8fafc; padding: 25px 30px; text-align: center; border-top: 1px solid #e2e8f0;">
+      <p style="color: #64748b; margin: 0; font-size: 13px;">
+        Automatska obavijest iz kontakt forme<br>
+        <strong style="color: #ea384c;">Otkup Automobila</strong>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>`}
               />
               
-              {/* Autoresponse configuration */}
+              {/* Autoresponse template for client */}
               <textarea 
-                name="autoresponse" 
+                name="autoresponse_template" 
                 style={{ display: 'none' }}
-                defaultValue={`Poštovani/a,
+                defaultValue={`<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 20px; background-color: #f5f5f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    
+    <!-- Header -->
+    <div style="background: linear-gradient(135deg, #ea384c 0%, #f97316 100%); padding: 40px 20px; text-align: center;">
+      <h1 style="color: #ffffff; margin: 0; font-size: 32px; font-weight: 700;">Otkup Automobila</h1>
+      <p style="color: #ffffff; margin: 10px 0 0 0; font-size: 16px; opacity: 0.95;">Brza i pouzdana procjena vozila</p>
+    </div>
 
-✅ Hvala vam što ste nas kontaktirali!
+    <!-- Content -->
+    <div style="padding: 40px 30px;">
+      
+      <h2 style="color: #1a1a1a; margin: 0 0 10px 0; font-size: 22px; font-weight: 600;">Poštovani/a {{name}},</h2>
+      
+      <p style="color: #4a5568; line-height: 1.8; margin: 20px 0; font-size: 15px;">
+        Hvala Vam na pokazanom interesu za naše usluge otkupa vozila!
+      </p>
 
-Primili smo vašu ponudu za otkup vozila i radujemo se mogućnosti suradnje s vama.
+      <p style="color: #4a5568; line-height: 1.8; margin: 20px 0; font-size: 15px;">
+        Primili smo Vaš zahtjev za ponudu i zahvaljujemo se na Vašem povjerenju. Vaš upit je trenutno u obradi, a naš stručni tim će ga detaljno razmotriti.
+      </p>
 
-━━━━━━━━━━━━━━━━━━━━━━━━
-📋 VAŠA PRIJAVA
-━━━━━━━━━━━━━━━━━━━━━━━━
+      <!-- Request Details -->
+      <div style="background-color: #f0fdf4; border-left: 4px solid #10b981; padding: 20px; margin: 25px 0; border-radius: 6px;">
+        <h3 style="color: #10b981; margin: 0 0 15px 0; font-size: 18px; font-weight: 600;">📋 Detalji Vašeg zahtjeva:</h3>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr>
+            <td style="padding: 6px 0; color: #64748b; font-weight: 500;">Vozilo:</td>
+            <td style="padding: 6px 0; color: #1a1a1a; font-weight: 600;">{{car_make_model}}</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px 0; color: #64748b; font-weight: 500;">Godina:</td>
+            <td style="padding: 6px 0; color: #1a1a1a; font-weight: 600;">{{year}}</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px 0; color: #64748b; font-weight: 500;">Kilometraža:</td>
+            <td style="padding: 6px 0; color: #1a1a1a; font-weight: 600;">{{mileage}} km</td>
+          </tr>
+        </table>
+      </div>
 
-Uspješno ste poslali upit za sljedeće vozilo. Naš tim će vas kontaktirati u najkraćem roku.
+      <p style="color: #4a5568; line-height: 1.8; margin: 20px 0; font-size: 15px; font-weight: 500;">
+        Javit ćemo Vam se povratno u najkraćem mogućem roku kako bismo dogovorili sve potrebne detalje i izradili personaliziranu ponudu prilagođenu Vašim potrebama.
+      </p>
 
-🔄 ŠTO SLIJEDI?
+      <!-- What's Next -->
+      <div style="background-color: #f8fafc; padding: 20px; margin: 25px 0; border-radius: 6px;">
+        <h3 style="color: #ea384c; margin: 0 0 15px 0; font-size: 18px; font-weight: 600;">🔄 Što slijedi?</h3>
+        <ul style="margin: 0; padding-left: 20px; color: #4a5568; line-height: 1.8;">
+          <li style="margin: 8px 0;">Naš tim će pregledati vašu prijavu u najkraćem roku</li>
+          <li style="margin: 8px 0;">Kontaktirat ćemo vas putem telefona ili emaila u roku od 24 sata</li>
+          <li style="margin: 8px 0;">Dogovorit ćemo pregled vozila na lokaciji koja vama odgovara</li>
+          <li style="margin: 8px 0;">Nakon pregleda, odmah ćete dobiti konkretnu ponudu</li>
+        </ul>
+      </div>
 
-• Naš tim će pregledati vašu prijavu u najkraćem mogućem roku
-• Kontaktirat ćemo vas putem telefona ili emaila u roku od 24 sata  
-• Dogovorit ćemo pregled vozila na lokaciji koja vama odgovara
-• Nakon pregleda, odmah ćete dobiti konkretnu ponudu
+      <!-- Key Benefits -->
+      <div style="background: linear-gradient(135deg, #ea384c 0%, #f97316 100%); padding: 25px; border-radius: 8px; text-align: center; margin: 30px 0;">
+        <p style="color: #ffffff; margin: 0; font-size: 16px; font-weight: 600; line-height: 1.6;">
+          💰 Brza procjena • 🤝 Fer ponuda • ⚡ Trenutna isplata
+        </p>
+      </div>
 
-━━━━━━━━━━━━━━━━━━━━━━━━
-💰 BRZA PROCJENA • 🤝 FER PONUDA • ⚡ TRENUTNA ISPLATA
-━━━━━━━━━━━━━━━━━━━━━━━━
+      <p style="color: #4a5568; line-height: 1.8; margin: 20px 0; font-size: 15px;">
+        U međuvremenu, ako imate dodatnih pitanja ili želite razgovarati s nama, slobodno nas kontaktirajte:
+      </p>
 
-Ako imate bilo kakva dodatna pitanja, slobodno nas kontaktirajte:
+      <!-- Contact Info -->
+      <div style="background-color: #f8fafc; padding: 20px; border-radius: 6px; margin: 20px 0;">
+        <p style="margin: 8px 0; color: #1a1a1a;">
+          <span style="font-size: 18px;">📞</span> 
+          <strong style="color: #4a5568;">Telefon:</strong> 
+          <span style="color: #ea384c; font-weight: 600;">+385 91 234 5678</span>
+        </p>
+        <p style="margin: 8px 0; color: #1a1a1a;">
+          <span style="font-size: 18px;">✉️</span> 
+          <strong style="color: #4a5568;">Email:</strong> 
+          <span style="color: #ea384c; font-weight: 600;">marinprusac5@gmail.com</span>
+        </p>
+      </div>
 
-📞 Telefon: +385 91 234 5678
-📧 Email: marinprusac5@gmail.com
+    </div>
 
-S poštovanjem,
-Tim Otkup Automobila`}
+    <!-- Footer -->
+    <div style="background-color: #f8fafc; padding: 30px; text-align: center; border-top: 1px solid #e2e8f0;">
+      <p style="color: #64748b; margin: 0 0 5px 0; font-size: 14px;">S poštovanjem,</p>
+      <p style="color: #ea384c; margin: 0; font-size: 16px; font-weight: 700;">Otkup Automobila tim</p>
+    </div>
+
+  </div>
+</body>
+</html>`}
               />
               
               <div>
