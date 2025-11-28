@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Send, Phone, Mail, MapPin } from "lucide-react";
@@ -146,16 +147,28 @@ export const Contact = () => {
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Input
-                  name="fuel_type"
-                  placeholder="Vrsta goriva"
-                  className="h-12 text-base"
-                />
-                <Input
-                  name="transmission"
-                  placeholder="Vrsta mjenjača"
-                  className="h-12 text-base"
-                />
+                <Select name="fuel_type">
+                  <SelectTrigger className="h-12 text-base">
+                    <SelectValue placeholder="Vrsta goriva" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="dizel">Dizel</SelectItem>
+                    <SelectItem value="benzin">Benzin</SelectItem>
+                    <SelectItem value="plin">Plin</SelectItem>
+                    <SelectItem value="cng">CNG</SelectItem>
+                    <SelectItem value="hibrid">Hibrid</SelectItem>
+                    <SelectItem value="elektro">Elektro</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Select name="transmission">
+                  <SelectTrigger className="h-12 text-base">
+                    <SelectValue placeholder="Vrsta mjenjača" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="manuelni">Manuelni</SelectItem>
+                    <SelectItem value="automatik">Automatik</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

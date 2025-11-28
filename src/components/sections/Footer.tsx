@@ -23,7 +23,7 @@ export const Footer = () => {
               Otkup Automobila
             </h3>
             <p className="text-background/80 leading-relaxed">
-              Brz, pošten i siguran otkup vozila diljem Hrvatske. Vaš pouzdan partner od 2009.
+              Brz, pošten i siguran otkup vozila diljem Hrvatske. Vaš pouzdan partner.
             </p>
             <div className="flex items-center gap-2 text-background/80">
               <Clock className="h-5 w-5 text-accent" />
