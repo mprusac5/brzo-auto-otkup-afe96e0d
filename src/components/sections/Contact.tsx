@@ -44,7 +44,7 @@ export const Contact = () => {
     setUploadedFiles(prev => prev.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setErrors({});
     setIsSubmitting(true);
@@ -80,10 +80,7 @@ export const Contact = () => {
       return;
     }
 
-    // Add uploaded files to FormData
-    uploadedFiles.forEach((file, index) => {
-      formData.append(`attachment_${index}`, file);
-    });
+    // Note: File uploads removed as Web3Forms free tier has limitations with attachments
     
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -91,7 +88,9 @@ export const Contact = () => {
         body: formData,
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (data.success) {
         toast({
           title: "✅ Poruka uspješno poslana!",
           description: "Primili ste potvrdu na vašu email adresu. Javit ćemo vam se uskoro.",
@@ -101,9 +100,10 @@ export const Contact = () => {
         setUploadedFiles([]);
         setErrors({});
       } else {
-        throw new Error("Submission failed");
+        throw new Error(data.message || "Submission failed");
       }
     } catch (error) {
+      console.error("Form error:", error);
       toast({
         variant: "destructive",
         title: "❌ Greška pri slanju",
@@ -152,117 +152,52 @@ export const Contact = () => {
                 3. Set marinprusac5@gmail.com as the recipient email
                 4. Replace YOUR_WEB3FORMS_ACCESS_KEY below with your actual key
               */}
+              <input type="hidden" name="access_key" value="991ed36e-6b60-4bb8-acee-1e8dd0eecd30" />
+              <input type="hidden" name="subject" value="🚗 Novi Upit - Otkup Automobila" />
+              <input type="hidden" name="from_name" value="Otkup Automobila Website" />
+              <input type="hidden" name="redirect" value="false" />
+              
+              {/* Formatted message for owner's email */}
               <input 
                 type="hidden" 
-                name="access_key" 
-                value="991ed36e-6b60-4bb8-acee-1e8dd0eecd30" 
+                name="message" 
+                value="⚠️ HITNO - Novi upit za otkup vozila!"
               />
-              <input 
-                type="hidden" 
-                name="subject" 
-                value="Nova upit - Otkup Automobila 🚗" 
-              />
-              <input 
-                type="hidden" 
-                name="from_name" 
-                value="Otkup Automobila" 
-              />
-              <input 
-                type="hidden" 
+              
+              {/* Autoresponse configuration */}
+              <textarea 
                 name="autoresponse" 
-                value="true" 
-              />
-              <input 
-                type="hidden" 
-                name="replyto" 
-                value="marinprusac5@gmail.com" 
-              />
-              <input 
-                type="hidden" 
-                name="template" 
-                value="custom" 
-              />
-              <input 
-                type="hidden" 
-                name="email_template" 
-                value={`
-                  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa;">
-                    <div style="background: linear-gradient(135deg, #ea384c 0%, #f97316 100%); padding: 30px; border-radius: 10px 10px 0 0; text-align: center;">
-                      <h1 style="color: white; margin: 0; font-size: 28px;">🚗 Novi Upit - Otkup Automobila</h1>
-                    </div>
-                    <div style="background: white; padding: 30px; border-radius: 0 0 10px 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                      <h2 style="color: #333; border-bottom: 2px solid #ea384c; padding-bottom: 10px;">Informacije o klijentu</h2>
-                      <table style="width: 100%; margin: 20px 0;">
-                        <tr><td style="padding: 8px 0; color: #666; font-weight: bold;">Ime i prezime:</td><td style="padding: 8px 0;">{{name}}</td></tr>
-                        <tr><td style="padding: 8px 0; color: #666; font-weight: bold;">Email:</td><td style="padding: 8px 0;">{{email}}</td></tr>
-                        <tr><td style="padding: 8px 0; color: #666; font-weight: bold;">Telefon:</td><td style="padding: 8px 0;">{{phone}}</td></tr>
-                      </table>
-                      
-                      <h2 style="color: #333; border-bottom: 2px solid #ea384c; padding-bottom: 10px; margin-top: 30px;">Informacije o vozilu</h2>
-                      <table style="width: 100%; margin: 20px 0;">
-                        <tr><td style="padding: 8px 0; color: #666; font-weight: bold;">Marka i model:</td><td style="padding: 8px 0;">{{car_make_model}}</td></tr>
-                        <tr><td style="padding: 8px 0; color: #666; font-weight: bold;">Godina:</td><td style="padding: 8px 0;">{{year}}</td></tr>
-                        <tr><td style="padding: 8px 0; color: #666; font-weight: bold;">Kilometraža:</td><td style="padding: 8px 0;">{{mileage}} km</td></tr>
-                        <tr><td style="padding: 8px 0; color: #666; font-weight: bold;">Vrsta goriva:</td><td style="padding: 8px 0;">{{fuel_type}}</td></tr>
-                        <tr><td style="padding: 8px 0; color: #666; font-weight: bold;">Mjenjač:</td><td style="padding: 8px 0;">{{transmission}}</td></tr>
-                        <tr><td style="padding: 8px 0; color: #666; font-weight: bold;">Kubikaža:</td><td style="padding: 8px 0;">{{engine_size}}</td></tr>
-                        <tr><td style="padding: 8px 0; color: #666; font-weight: bold;">Snaga motora:</td><td style="padding: 8px 0;">{{engine_power}} kW</td></tr>
-                      </table>
-                      
-                      {{#if message}}
-                      <h2 style="color: #333; border-bottom: 2px solid #ea384c; padding-bottom: 10px; margin-top: 30px;">Dodatne informacije</h2>
-                      <p style="background: #f8f9fa; padding: 15px; border-radius: 5px; color: #555;">{{message}}</p>
-                      {{/if}}
-                      
-                      <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #ea384c 0%, #f97316 100%); border-radius: 5px; text-align: center;">
-                        <p style="color: white; margin: 0; font-size: 14px;">Odgovorite na ovaj upit što prije kako bi zadržali klijenta!</p>
-                      </div>
-                    </div>
-                  </div>
-                `} 
-              />
-              <input 
-                type="hidden" 
-                name="autoresponse_template" 
-                value={`
-                  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa;">
-                    <div style="background: linear-gradient(135deg, #ea384c 0%, #f97316 100%); padding: 30px; border-radius: 10px 10px 0 0; text-align: center;">
-                      <h1 style="color: white; margin: 0; font-size: 28px;">✅ Potvrda prijema</h1>
-                    </div>
-                    <div style="background: white; padding: 30px; border-radius: 0 0 10px 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                      <p style="font-size: 18px; color: #333;">Poštovani/a {{name}},</p>
-                      
-                      <p style="color: #555; line-height: 1.6;">Hvala vam što ste nas kontaktirali! Primili smo vašu ponudu za otkup vozila i radujemo se mogućnosti suradnje s vama.</p>
-                      
-                      <div style="background: #f8f9fa; padding: 20px; border-left: 4px solid #ea384c; margin: 20px 0;">
-                        <h3 style="color: #ea384c; margin-top: 0;">📋 Vaša prijava</h3>
-                        <p style="margin: 5px 0; color: #555;"><strong>Vozilo:</strong> {{car_make_model}}</p>
-                        <p style="margin: 5px 0; color: #555;"><strong>Godina:</strong> {{year}}</p>
-                        <p style="margin: 5px 0; color: #555;"><strong>Kilometraža:</strong> {{mileage}} km</p>
-                      </div>
-                      
-                      <h3 style="color: #333; margin-top: 30px;">🔄 Što slijedi?</h3>
-                      <ul style="color: #555; line-height: 1.8;">
-                        <li>Naš tim će pregledati vašu prijavu u najkraćem mogućem roku</li>
-                        <li>Kontaktirat ćemo vas putem telefona ili emaila u roku od 24 sata</li>
-                        <li>Dogovorit ćemo pregled vozila na lokaciji koja vama odgovara</li>
-                        <li>Nakon pregleda, odmah ćete dobiti konkretnu ponudu</li>
-                      </ul>
-                      
-                      <div style="background: linear-gradient(135deg, #ea384c 0%, #f97316 100%); padding: 20px; border-radius: 8px; margin: 30px 0; text-align: center;">
-                        <p style="color: white; margin: 0; font-size: 16px; font-weight: bold;">💰 Brza procjena • 🤝 Fer ponuda • ⚡ Trenutna isplata</p>
-                      </div>
-                      
-                      <p style="color: #555; line-height: 1.6;">Ako imate bilo kakva dodatna pitanja, slobodno nas kontaktirajte:</p>
-                      <p style="color: #555; margin: 5px 0;">📞 <strong>Telefon:</strong> +385 91 234 5678</p>
-                      <p style="color: #555; margin: 5px 0;">📧 <strong>Email:</strong> marinprusac5@gmail.com</p>
-                      
-                      <div style="border-top: 2px solid #eee; margin-top: 30px; padding-top: 20px; text-align: center;">
-                        <p style="color: #999; font-size: 12px; margin: 0;">S poštovanjem,<br><strong style="color: #ea384c;">Tim Otkup Automobila</strong></p>
-                      </div>
-                    </div>
-                  </div>
-                `} 
+                style={{ display: 'none' }}
+                defaultValue={`Poštovani/a,
+
+✅ Hvala vam što ste nas kontaktirali!
+
+Primili smo vašu ponudu za otkup vozila i radujemo se mogućnosti suradnje s vama.
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+📋 VAŠA PRIJAVA
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+Uspješno ste poslali upit za sljedeće vozilo. Naš tim će vas kontaktirati u najkraćem roku.
+
+🔄 ŠTO SLIJEDI?
+
+• Naš tim će pregledati vašu prijavu u najkraćem mogućem roku
+• Kontaktirat ćemo vas putem telefona ili emaila u roku od 24 sata  
+• Dogovorit ćemo pregled vozila na lokaciji koja vama odgovara
+• Nakon pregleda, odmah ćete dobiti konkretnu ponudu
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+💰 BRZA PROCJENA • 🤝 FER PONUDA • ⚡ TRENUTNA ISPLATA
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ako imate bilo kakva dodatna pitanja, slobodno nas kontaktirajte:
+
+📞 Telefon: +385 91 234 5678
+📧 Email: marinprusac5@gmail.com
+
+S poštovanjem,
+Tim Otkup Automobila`}
               />
               
               <div>
@@ -368,7 +303,7 @@ export const Contact = () => {
               
               <div>
                 <Textarea
-                  name="message"
+                  name="additional_info"
                   placeholder="Stanje vozila / Dodatne informacije"
                   rows={4}
                   className="w-full text-base"
@@ -377,7 +312,7 @@ export const Contact = () => {
               
               <div>
                 <label className="block mb-2 text-sm font-medium text-foreground">
-                  Slike vozila (opcionalno, max 10MB po slici)
+                  Slike vozila (opcionalno, za slanje slika kontaktirajte nas direktno)
                 </label>
                 
                 {uploadedFiles.length > 0 && (
@@ -419,14 +354,17 @@ export const Contact = () => {
                     <Upload className="h-10 w-10 text-muted-foreground" />
                     <span className="text-muted-foreground text-sm text-center">
                       {uploadedFiles.length > 0 
-                        ? "Dodajte još slika automobila" 
-                        : "Kliknite za učitavanje slika automobila"}
+                        ? "Dodajte još slika automobila (reference)" 
+                        : "Privremeno učitajte slike (kontaktirat ćemo vas za slanje)"}
                     </span>
                     <span className="text-xs text-muted-foreground">
                       {uploadedFiles.length > 0 && `(${uploadedFiles.length} ${uploadedFiles.length === 1 ? 'slika' : 'slike'} učitano)`}
                     </span>
                   </label>
                 </div>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Napomena: Možete priložiti slike ovdje, ali je najbolje poslati ih direktno putem WhatsApp-a ili emaila nakon što primite potvrdu.
+                </p>
               </div>
               
               <Button
