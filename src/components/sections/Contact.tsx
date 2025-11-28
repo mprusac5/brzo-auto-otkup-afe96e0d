@@ -76,7 +76,13 @@ export const Contact = () => {
               Zatražite besplatnu ponudu
             </h3>
             <form onSubmit={handleSubmit} className="space-y-5">
-              {/* Web3Forms access key - replace with your own */}
+              {/* 
+                Web3Forms Configuration:
+                1. Go to https://web3forms.com and create a free account
+                2. Create a new Access Key
+                3. Set marinprusac5@gmail.com as the recipient email
+                4. Replace YOUR_WEB3FORMS_ACCESS_KEY below with your actual key
+              */}
               <input 
                 type="hidden" 
                 name="access_key" 
@@ -91,6 +97,11 @@ export const Contact = () => {
                 type="hidden" 
                 name="from_name" 
                 value="Otkup Automobila Website" 
+              />
+              <input 
+                type="hidden" 
+                name="redirect" 
+                value="https://web3forms.com/success" 
               />
               
               <div>
